@@ -1,0 +1,22 @@
+k = 0.01;
+m = 12+18;
+hbar = 6.62607015*10^(-34)/2/pi;
+d = 0.1;
+x_start = 0.1;
+x_end = 1;
+wavefunction_lim = 3;
+
+ke = zeros(wavefunction_lim);
+v = ke;
+
+for n = 1:wavefunction_lim
+    for xi = x_start : d : x_end
+        if n == xi
+            v(n,n) = 0.5*k*xi^2;
+        end
+    end
+end
+
+ke = ((hbar^2)/(2*m)).*ke;
+
+disp(ke)
